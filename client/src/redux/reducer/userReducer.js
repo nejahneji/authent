@@ -1,7 +1,7 @@
-import { REGISTER, REGISTER_FAIL, REGISTER_SUCCESS } from "../actionTypes";
+import { LOGIN, LOGIN_FAIL, LOGIN_SUCEESS, REGISTER, REGISTER_FAIL, REGISTER_SUCCESS } from "../actionTypes";
 
 const initialState= {
-    loading: true,
+    loading: false,
     token : null,
     users:null,
     errors: null
@@ -15,6 +15,12 @@ const userReducer=(state=initialState, {type,payload}) =>{
             return {...state,loading:false,users: payload}
         case REGISTER_FAIL:
             return {...state, loading:false,errors:payload}
+        case LOGIN :
+            return {...state , loading :true}
+        case LOGIN_SUCEESS :
+            return {...state , loading : false , token :payload}
+        case LOGIN_FAIL :
+            return {...state , loading : false , errors : payload }
         default:
             return state
     }
