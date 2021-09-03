@@ -2,11 +2,13 @@ const express = require('express');
 const connectDB = require('./config/connectDB');
 const app = express()
 const user = require('./routes/user')
+const food = require('./routes/food')
 
 
 app.use(express.json())
 connectDB()
 app.use('/user',user)
+app.use('/food',food)
 
 
 
