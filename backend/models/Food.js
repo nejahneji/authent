@@ -5,5 +5,6 @@ const foodSchema = new Schema({
     description : String,
     capacity: String ,
     price : String 
+       
 })
 module.exports=mongoose.model('Food', foodSchema)

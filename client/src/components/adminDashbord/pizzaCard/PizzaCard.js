@@ -1,6 +1,10 @@
 import React from 'react'
+import { useDispatch } from 'react-redux';
+import { deletFood, getFood } from '../../../redux/actions/foodActions';
+import EditPizza from '../editPizza/EditPizza';
 import './pizzaCard.css'
 const PizzaCard = ({pizza}) => {
+    const dispatch = useDispatch()
     console.log(pizza)
     return (
         <div className="container">
@@ -14,7 +18,8 @@ const PizzaCard = ({pizza}) => {
                     <button className="btn cart"> buy now</button>
                     <button className="btn bookmark"><i className="fa fa-heart-o" aria-hidden="true"></i></button>
                 </div>
-
+                <i class="fas fa-trash-restore fa-2x " onClick={()=>{dispatch(deletFood(pizza._id)); dispatch(getFood())}}></i>
+                <EditPizza pizza={pizza}/>
             </div>
         </div>
     )

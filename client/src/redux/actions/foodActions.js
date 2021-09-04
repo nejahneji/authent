@@ -26,9 +26,10 @@ export const deletFood = (id) => async(dispatch) => {
         alert('delete error')
     }
 }
-export const editFood = (id) => async(dispatch) => {
+export const editFood = (id,foodName,description,capacity,price) => async(dispatch) => {
     try {
-        let res = await axios.put(`/food/update/${id}`)
+        let editedFood = {foodName,description,capacity,price}
+        let res = await axios.put(`/food/update/${id}`,editedFood)
         dispatch({
             type : EDIT,
             payload : res.data
