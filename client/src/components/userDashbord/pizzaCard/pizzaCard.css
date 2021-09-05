@@ -33,9 +33,9 @@
     background: #f0f0f0;
   }
   .pizza-img {
-    width: 300px;
-    height: 230px;
-    background: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcBfObT9LsjRiqI1yzVcCLvkT3_77oHmWT3A&usqp=CAU") 0 -200px / cover;
+    width: 150px;
+    height: 100px;
+    /* background: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcBfObT9LsjRiqI1yzVcCLvkT3_77oHmWT3A&usqp=CAU") 0 -200px / cover; */
   }
   .pizza-detail{
   width: 300px;

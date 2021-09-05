@@ -41,6 +41,8 @@ const SignUp = () => {
   </Button>
 </Form>
         </div>
+     
+
     )
 }
 

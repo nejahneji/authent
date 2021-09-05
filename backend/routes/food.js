@@ -15,7 +15,7 @@ const upload = require('../middlewares/upload')
 // const upload = multer({storage :storage})
 // upload.single('foodImage')
 
-router.post('/add',addFood);
+router.post('/add',upload.single('avatar'),addFood);
 
 // console.log(req.file)
 router.get('/get', getFood);

@@ -2,7 +2,7 @@ const Food = require("../models/Food");
 
 exports.addFood = async (req, res) => {
   console.log(req.file);
-  const { foodName, description, capacity, price, img } = req.body;
+  const { foodName, description, capacity, price } = req.body;
 
   const newFood = new Food({
     foodName,
@@ -10,7 +10,9 @@ exports.addFood = async (req, res) => {
     capacity,
     price
   });
-
+if( req.file){
+  newFood.avatar = req.file.path
+}
   try {
     await newFood.save();
     res.send(newFood);
