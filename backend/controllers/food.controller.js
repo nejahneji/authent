@@ -40,6 +40,7 @@ exports.editFood = async (req, res) => {
   try {
     editedFood = await Food.findByIdAndUpdate(
       req.params.id,
+      // {...req.file.path},
       { ...req.body },
       { new: true }
     );

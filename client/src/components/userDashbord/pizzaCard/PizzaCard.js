@@ -1,11 +1,12 @@
 import React from 'react'
-import './pizzaCard.css'
+import './pizzaCardUser.css'
 const PizzaCard = ({pizza}) => {
     console.log(pizza)
     return (
         <div className="container">
-            {/* <div className="pizza-img">
-            </div> */}
+            <div className="pizza-img">
+            <img src="../../../../../backend/uploads/1630846856033.png" />
+            </div>
             <div className="pizza-details">
                 <span>{pizza.foodName}</span>
                 <p>{pizza.description}</p>

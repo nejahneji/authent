@@ -1,20 +1,23 @@
-import React, { useState } from 'react'
-import { Button, Modal } from 'react-bootstrap';
-import { useDispatch } from 'react-redux';
-import { addFood, getFood } from '../../../redux/actions/foodActions';
+import React, { useState } from "react";
+import { Button, Modal } from "react-bootstrap";
+import { useDispatch } from "react-redux";
+import { addFood, getFood } from "../../../redux/actions/foodActions";
 
 const AddPizaa = () => {
-    const dispatch = useDispatch();
+  const dispatch = useDispatch();
   const [FoodName, setFoodName] = useState("");
   const [description, setDescription] = useState("");
   const [capacity, setCapacity] = useState("");
   const [price, setPrice] = useState("");
+  const [file, setFile] = useState();
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-    return (
-        <div>
-            <Button variant="primary" onClick={handleShow}>
+
+  
+  return (
+    <div>
+      <Button variant="primary" onClick={handleShow}>
         ADD PIZZA
       </Button>
 
@@ -57,6 +60,10 @@ const AddPizaa = () => {
               onChange={(e) => setPrice(e.target.value)}
               value={price}
             />
+            {/* <input type="file"  /> */}
+            <form action="/profile" method="post" enctype="multipart/form-data">
+              <input type="file" name="avatar" onChange={(e) => setFile(e.target.files[0])}/>
+            </form>
           </form>
         </Modal.Body>
         <Modal.Footer>
@@ -67,7 +74,7 @@ const AddPizaa = () => {
             variant="primary"
             type="submit"
             onClick={() => {
-              dispatch(addFood(FoodName,description,capacity,price));
+              dispatch(addFood(FoodName, description, capacity, price));
               dispatch(getFood());
               handleClose();
             }}
@@ -76,8 +83,8 @@ const AddPizaa = () => {
           </Button>
         </Modal.Footer>
       </Modal>
-        </div>
-    )
-}
+    </div>
+  );
+};
 
-export default AddPizaa
+export default AddPizaa;

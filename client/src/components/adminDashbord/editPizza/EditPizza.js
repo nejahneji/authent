@@ -54,6 +54,7 @@ const EditPizza = ({pizza}) => {
               onChange={(e) => setPrice(e.target.value)}
               value={price}
             />
+            <input type="file"  />
           </form>
         </Modal.Body>
         <Modal.Footer>

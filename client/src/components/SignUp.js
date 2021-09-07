@@ -14,7 +14,7 @@ const SignUp = () => {
         dispatch(registerUser({fullName,email,password,phone}))
     }
     return (
-        <div className="col-md-5 m-auto">
+        <div className="col-md-5 m-auto" style={{"background":"rgba(255,255,255,0.623)"}}>
             <h1>Sign Up</h1>
             <Form >
   <Form.Group className="mb-3" controlId="formBasicEmail">

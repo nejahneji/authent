@@ -1,24 +1,12 @@
 const express = require('express');
 const { addFood, getFood, deleteFood, editFood } = require('../controllers/food.controller');
+const isAuth = require('../middlewares/isAuth');
 const router = express.Router();
 const upload = require('../middlewares/upload')
-// const multer = require('multer');
 
-// const storage = multer.diskStorage({
-//     destination :function(req,file ,cb){
-//         cb(null , './uploads/')
-//     },
-//     filename :function (req, file, cb ){
-//         cb(null , new Date().toISOString() + file.originalname)
-//     } 
-// })
-// const upload = multer({storage :storage})
-// upload.single('foodImage')
 
 router.post('/add',upload.single('avatar'),addFood);
-
-// console.log(req.file)
-router.get('/get', getFood);
+router.get('/get',getFood);
 router.delete('/delete/:id', deleteFood);
-router.put('/update/:id', editFood);
+router.put('/update/:id', upload.single('avatar'),editFood);
 module.exports= router;

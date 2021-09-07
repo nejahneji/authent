@@ -15,7 +15,7 @@ const PizzaList = () => {
       {loading ? (
         <h1>loading...</h1>
       ) : (
-        <div>
+        <div className='pizzalist col-md-8'>
           {foods.map((pizza) => (
             <PizzaCard pizza={pizza} key={pizza._id} />
           ))}

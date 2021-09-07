@@ -6,7 +6,7 @@ const secret = config.get('secret')
 
 
 exports.register= async(req,res)=> {
-    const {fullName,email,password,phone}=req.body
+    const {fullName,email,password,phone,isAdmin}=req.body
     try {
         let existantUser= await User.findOne({email})
         if(existantUser) return res.status(400).json({msg:'user already exist'})
@@ -14,14 +14,16 @@ exports.register= async(req,res)=> {
             fullName,
             email,
             password,
-            phone
+            phone,
+            isAdmin
         })
         var salt =await bcrypt.genSalt(10);
         var hash =await bcrypt.hash(password, salt);
         newUser.password=hash
         await newUser.save()
         const payload ={
-            id:newUser._id
+            id:newUser._id 
+            
         }
         const token =await jwt.sign(payload, secret)
         res.send({
@@ -30,7 +32,8 @@ exports.register= async(req,res)=> {
                 _id:newUser._id,
                 fullName:newUser.fullName,
                 email :newUser.email,
-                phone:newUser.phone
+                phone:newUser.phone,
+                isAdmin:newUser.isAdmin
             }
         })
         // res.send(newUser)
@@ -55,7 +58,8 @@ exports.login = async(req,res) => {
                 _id:existantUser._id,
                 fullName:existantUser.fullName,
                 email :existantUser.email,
-                phone:existantUser.phone
+                phone:existantUser.phone,
+                isAdmin : existantUser.isAdmin
             }
         })
     } catch (error) {
