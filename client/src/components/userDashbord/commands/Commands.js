@@ -35,8 +35,8 @@ const Commands = (id) => {
 
       <div className="cartscreen__right">
         <div className="cartscreen__info">
-          <p>total(0)</p>
-          <p>Dt</p>
+          <p>({cartItems.length})pizza</p>
+          <p style={{display:"flex", marginLeft:"7rem"}}><h6>Total = </h6>{cartItems.reduce((a,c) => a + parseInt(c.price) , 0 )}Dt</p>
         </div>
         <div>
           <button>Purchase</button>

@@ -73,6 +73,14 @@ display: none;
     font-weight: 700;
     font-size: 2em;
 }
+.notification{
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+    padding: 0.2rem 0.7rem;
+    font-size: 1rem;
+    margin-left: 0.2rem;
+}
 @media (max-width : 1200px){
     .but{
         display: flex;

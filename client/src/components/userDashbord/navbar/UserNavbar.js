@@ -1,7 +1,10 @@
+import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import "./userNavbar.css";
 
 const UserNavbar = () => {
+  const cart = useSelector (state => state.cart);
+  const {cartItems} = cart
   return (
     <header>
       <img
@@ -39,7 +42,9 @@ const UserNavbar = () => {
           </Link>
           <Link to="/Command">
             <li>
-              <a href="#"><i class="fas fa-cart-arrow-down"></i></a>
+              <a href="#"><i class="fas fa-cart-arrow-down"></i>
+              {cartItems.length > 0 && (<span className="notification">{cartItems.length}</span>)}
+              </a>
             </li>
           </Link>
         </ol>

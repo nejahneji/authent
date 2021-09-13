@@ -21,7 +21,7 @@ import { ADD_TO_CART ,REMOVE_FROM_CART} from '../actionTypes';
                 qty
               } 
           })
-          // localStorage.setItem('cartItems',JSON.stringify(getState().cart.cartItems))
+          localStorage.setItem('cartItems',JSON.stringify(getState().cart.cartItems))
          }
       
   

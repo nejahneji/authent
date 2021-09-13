@@ -26,6 +26,7 @@ const EditPizza = ({pizza}) => {
         </Modal.Header>
         <Modal.Body>
           <form onSubmit={(e) => e.preventDefault()}>
+            <label>pizzaName</label>
             <input
               placeholder="pizzaName"
               type="text"
@@ -33,6 +34,7 @@ const EditPizza = ({pizza}) => {
               onChange={(e) => setFoodName(e.target.value)}
               value={FoodName}
             />
+            <label>pizzaDescription</label>
             <input
               placeholder="description"
               type="text"
@@ -40,6 +42,7 @@ const EditPizza = ({pizza}) => {
               onChange={(e) => setDescription(e.target.value)}
               value={description}
             />
+            <label>pizzaCapcity</label>
             <input
               placeholder="capacity"
               type="text"
@@ -47,6 +50,7 @@ const EditPizza = ({pizza}) => {
               onChange={(e) => setCapacity(e.target.value)}
               value={capacity}
             />
+            <label>pizzaPrice</label>
             <input
               placeholder="price"
               type="text"
