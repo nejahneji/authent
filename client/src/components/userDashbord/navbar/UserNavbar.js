@@ -32,6 +32,16 @@ const UserNavbar = () => {
               <a href="#">Admin</a>
             </li>
           </Link>
+          <Link to="/">
+            <li>
+              <a href="#">Log Out</a>
+            </li>
+          </Link>
+          <Link to="/Command">
+            <li>
+              <a href="#"><i class="fas fa-cart-arrow-down"></i></a>
+            </li>
+          </Link>
         </ol>
       </div>
     </header>

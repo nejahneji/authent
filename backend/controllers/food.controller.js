@@ -2,13 +2,14 @@ const Food = require("../models/Food");
 
 exports.addFood = async (req, res) => {
   console.log(req.file);
-  const { foodName, description, capacity, price } = req.body;
+  const { foodName, description, capacity, price ,avatar} = req.body;
 
   const newFood = new Food({
     foodName,
     description,
     capacity,
-    price
+    price,
+    avatar
   });
 if( req.file){
   newFood.avatar = req.file.path
@@ -26,6 +27,16 @@ exports.getFood = async (req, res) => {
     res.send(foods);
   } catch (error) {
     res.status(500).json({ msg: error.msg });
+  }
+};
+exports.getFoodById = async (req, res) => {
+  try {
+    const foods = await Food.findById(req.params.id);
+
+    res.json(foods);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: "Server Error" });
   }
 };
 exports.deleteFood = async (req, res) => {
@@ -49,3 +60,4 @@ exports.editFood = async (req, res) => {
     res.status(500).json({ msg: error.msg });
   }
 };
+

@@ -8,14 +8,14 @@ const PizzaList = () => {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getFood());
-  }, []);
-  console.log(foods);
+  }, [dispatch]);
+  // console.log(foods);
   return (
     <div>
       {loading ? (
         <h1>loading...</h1>
       ) : (
-        <div className='pizzalist col-md-8'>
+        <div style={{display :"flex" , flexDirection:"row" ,flexWrap:"wrap"}}>
           {foods.map((pizza) => (
             <PizzaCard pizza={pizza} key={pizza._id} />
           ))}

@@ -13,6 +13,7 @@ import UserDashbord from "./components/userDashbord/UserDashbord";
 import AdminDashbord from "./components/adminDashbord/AdminDashbord";
 import Test from "./components/Test";
 import { useSelector } from "react-redux";
+import Commands from "./components/userDashbord/commands/Commands";
 
 function App() {
   const { isAuth } = useSelector((state) => state.userReducer);
@@ -25,6 +26,8 @@ function App() {
           <Route path="/UserDashbord" exact component={UserDashbord} />
           <Route path="/AdminDashbord" exact component={AdminDashbord} />
           <Route path="/Test" exact component={Test} />
+          {/* <Route path='/food/:id' component={details} /> */}
+          <Route path='/Command' exact component={Commands} />
         </Switch>
       </Router>
       {/* <PizzaList/> */}

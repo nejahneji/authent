@@ -6,6 +6,7 @@ const food = require('./routes/food')
 
 
 app.use(express.json())
+app.use('/uploads',express.static('uploads'))
 connectDB()
 app.use('/user',user)
 app.use('/food',food)

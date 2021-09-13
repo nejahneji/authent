@@ -3,9 +3,9 @@ import { ADD, DELETE, EDIT, GET } from "../actionTypes";
 
 
 
-export const addFood = (foodName,description,capacity,price) =>  async(dispatch) => {
+export const addFood = (foodName,description,capacity,price,avatar) =>  async(dispatch) => {
     try {
-        const newFood={foodName,description,capacity,price}
+        const newFood={foodName,description,capacity,price,avatar}
         let res= await axios.post('/food/add', newFood)
         dispatch =({
             type :ADD ,

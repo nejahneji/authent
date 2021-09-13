@@ -1,17 +1,19 @@
-import React from 'react'
-import Contact from './contact/Contact';
-import UserNavbar from './navbar/UserNavbar';
+import React from "react";
 
-import PizzaList from './pizzaList/PizzaList';
+import Contact from "./contact/Contact";
+import UserNavbar from "./navbar/UserNavbar";
+
+
+import PizzaList from "./pizzaList/PizzaList";
 
 const UserDashbord = () => {
-    return (
-        <div>
-            <UserNavbar/>
-            <PizzaList/>
-            <Contact/>
-        </div>
-    )
-}
+  return (
+    <div>
+      <UserNavbar />
+      <PizzaList />
+      <Contact />
+    </div>
+  );
+};
 
-export default UserDashbord
+export default UserDashbord;

@@ -9,11 +9,14 @@ const AddPizaa = () => {
   const [description, setDescription] = useState("");
   const [capacity, setCapacity] = useState("");
   const [price, setPrice] = useState("");
-  const [file, setFile] = useState();
+   const [file, setFile] = useState(); 
   const [show, setShow] = useState(false);
+  // const [file, setAvatar] = useState("")
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-
+  const formData = new FormData();
+   if (file) {formData.append("file", file )}
+  console.log("test"+file)
   
   return (
     <div>
@@ -31,7 +34,7 @@ const AddPizaa = () => {
           <Modal.Title>AddPizaa</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <form onSubmit={(e) => e.preventDefault()}>
+          <form  action="/add" mathode="post" onSubmit={(e) => e.preventDefault()} enctype="multipart/form-data" >
             <input
               placeholder="pizzaName"
               type="text"
@@ -61,9 +64,9 @@ const AddPizaa = () => {
               value={price}
             />
             {/* <input type="file"  /> */}
-            <form action="/profile" method="post" enctype="multipart/form-data">
-              <input type="file" name="avatar" onChange={(e) => setFile(e.target.files[0])}/>
-            </form>
+            {/* <form action="/profile" method="post" enctype="multipart/form-data"> */}
+              <input type="file" name="avatar" onChange={(e) => setFile(e.target.value)}/>
+            {/* </form> */}
           </form>
         </Modal.Body>
         <Modal.Footer>
@@ -74,7 +77,7 @@ const AddPizaa = () => {
             variant="primary"
             type="submit"
             onClick={() => {
-              dispatch(addFood(FoodName, description, capacity, price));
+              dispatch(addFood(FoodName, description, capacity, price,file));
               dispatch(getFood());
               handleClose();
             }}

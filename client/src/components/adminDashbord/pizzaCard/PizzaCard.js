@@ -9,7 +9,7 @@ const PizzaCard = ({ pizza }) => {
   return (
     <div className="container">
       <div className="pizza-img">
-        <img src="../../../../../backend/uploads/1630846856033.png" />
+        <img src={`http://localhost:5000/${pizza.avatar}`} alt='img'/>
       </div>
       <div className="pizza-details">
         <span>{pizza.foodName}</span>
@@ -17,7 +17,7 @@ const PizzaCard = ({ pizza }) => {
         <span className="price">{pizza.price} Dt</span>
         <div className="params">
           <i
-            class="fas fa-trash-restore fa-2x "
+            className="fas fa-trash-restore fa-2x "
             onClick={() => {
               dispatch(deletFood(pizza._id));
               dispatch(getFood());

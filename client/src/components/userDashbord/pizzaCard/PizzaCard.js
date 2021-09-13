@@ -1,18 +1,26 @@
 import React from 'react'
+import { addToCart } from '../../../redux/actions/carAction';
 import './pizzaCardUser.css'
+import {useDispatch, useSelector} from 'react-redux'
+import { Link } from 'react-router-dom';
+
 const PizzaCard = ({pizza}) => {
-    console.log(pizza)
+    const {foods} = useSelector(state => state.foodReducer)
+    const dispatch = useDispatch()
+
+    
+    // console.log(pizza.avatar)
     return (
         <div className="container">
             <div className="pizza-img">
-            <img src="../../../../../backend/uploads/1630846856033.png" />
+            <Link to=''><img src={`http://localhost:5000/${pizza.avatar}`} alt={pizza.foodName} /></Link>
             </div>
             <div className="pizza-details">
                 <span>{pizza.foodName}</span>
                 <p>{pizza.description}</p>
                 <div className="buttons">
                     <span className="price">{pizza.price} Dt</span>
-                    <button className="btn cart"> buy now</button>
+                    <button className="btn cart" onClick={()=>dispatch(addToCart(pizza._id))} > buy now</button>
                     <button className="btn bookmark"><i className="fa fa-heart-o" aria-hidden="true"></i></button>
                 </div>
 
