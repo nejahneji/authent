@@ -1,4 +1,4 @@
-import { LOGIN, LOGIN_FAIL, LOGIN_SUCEESS, REGISTER, REGISTER_FAIL, REGISTER_SUCCESS } from "../actionTypes";
+import { LOGIN, LOGIN_FAIL, LOGIN_SUCEESS, LOG_OUT, REGISTER, REGISTER_FAIL, REGISTER_SUCCESS } from "../actionTypes";
 import axios from 'axios'
 
 
@@ -39,4 +39,10 @@ export const loginUser = (user) => async(dispatch) =>{
             payload:error.response.data
         })
     }
+}
+export const logOut = () => async(dispatch) => {
+localStorage.removeItem("token")
+dispatch ({
+    type : LOG_OUT 
+})
 }

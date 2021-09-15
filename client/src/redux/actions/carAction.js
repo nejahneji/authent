@@ -28,7 +28,7 @@ import { ADD_TO_CART ,REMOVE_FROM_CART} from '../actionTypes';
     export const removeFromCart = (id) => (dispatch,getState) => {
           dispatch({
               type: REMOVE_FROM_CART,
-              payload: id ,
+              payload:id
             });
-          //  localStorage.setItem('cart',json.stringify(getState().cart.cartItems))   
+           localStorage.setItem('cartItems',JSON.stringify(getState().cart.cartItems))   
                  }

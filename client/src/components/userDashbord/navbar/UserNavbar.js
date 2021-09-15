@@ -1,9 +1,12 @@
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import { logOut } from "../../../redux/actions/userActions";
 import "./userNavbar.css";
 
 const UserNavbar = () => {
   const cart = useSelector (state => state.cart);
+  const dispatch = useDispatch()
+  const {token} = useSelector(state => state.userReducer)
   const {cartItems} = cart
   return (
     <header>
@@ -30,13 +33,13 @@ const UserNavbar = () => {
               <a href="#">Contact</a>
             </li>
           </Link>
-          <Link to="/AdminDashbord">
+          { token.user.isAdmin ? <Link to="/AdminDashbord">
             <li>
               <a href="#">Admin</a>
             </li>
-          </Link>
+          </Link> :<></>}
           <Link to="/">
-            <li>
+            <li onClick={()=>dispatch(logOut())}>
               <a href="#">Log Out</a>
             </li>
           </Link>

@@ -27,7 +27,7 @@ const Commands = (id) => {
             <option value="3">3</option>
             <option value="4">4</option>
           </select>
-          <i class="far fa-trash-alt fa-2x" onClick={()=> dispatch(removeFromCart(pizza._id))}></i>
+          <i class="far fa-trash-alt fa-2x" onClick={()=> dispatch(removeFromCart(pizza.id))}></i>
         </div>))}
       
         

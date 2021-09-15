@@ -8,7 +8,7 @@ const SingnIn = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const dispatch = useDispatch();
-  const { users, loading, isAuth } = useSelector((state) => state.userReducer);
+  const {isAuth,loading} = useSelector((state) => state.userReducer);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -16,9 +16,8 @@ const SingnIn = () => {
   };
   // <Redirect to="/test" />  :
   return (
-    // <div>
-    //   {" "}
-    //   loading ? <h1>loading...</h1>: (
+    <div>
+      { loading ? <h1>loading...</h1>: isAuth ? <Redirect to='/UserDashbord'/> :  (
       <div className="contain">
         <p className="heading">Login in</p>
         <div className="box">
@@ -54,8 +53,8 @@ const SingnIn = () => {
         <Link to="/login">
           <button className="loginbtn">Sign UP</button>
         </Link>
-      {/* </div>
-      ) */}
+      </div>
+    )}
     </div>
   );
 };
