@@ -2,7 +2,7 @@ import React from "react";
 import { useSelector } from "react-redux";
 import { Redirect } from "react-router";
 
-import Contact from "./contact/Contact";
+
 import UserNavbar from "./navbar/UserNavbar";
 
 
@@ -16,7 +16,7 @@ const UserDashbord = () => {
       <div>
       <UserNavbar />
       <PizzaList />
-      <Contact />
+      
       
       </div>
 }

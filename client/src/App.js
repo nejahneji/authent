@@ -8,13 +8,13 @@ import {
   Switch,
 } from "react-router-dom";
 import SingnIn from "./components/SingnIn";
-// import PizzaList from './components/adminDashbord/pizzaList/PizzaList'
 import UserDashbord from "./components/userDashbord/UserDashbord";
 import AdminDashbord from "./components/adminDashbord/AdminDashbord";
 import Test from "./components/Test";
 import { useSelector } from "react-redux";
 import Commands from "./components/userDashbord/commands/Commands";
 import AboutUs from "./components/userDashbord/aboutUs/AboutUs";
+import Contact from "./components/userDashbord/contact/Contact";
 
 function App() {
   const { isAuth } = useSelector((state) => state.userReducer);
@@ -29,9 +29,10 @@ function App() {
           <Route path="/Test" exact component={Test} />
           <Route path='/Command' exact component={Commands} />
           <Route path='/about' exact component={AboutUs}/>
+          <Route path='/contact' exact component={Contact}/>
         </Switch>
       </Router>
-      {/* <PizzaList/> */}
+     
     </div>
   );
 }

@@ -18,7 +18,7 @@ const UserNavbar = () => {
       <div className="nav">
         <ol>
         
-          <Link>
+          <Link to='/about'>
             <li>
               <a href="#">About US</a>
             </li>
@@ -28,7 +28,7 @@ const UserNavbar = () => {
               <a href="#">Services</a>
             </li>
           </Link>
-          <Link>
+          <Link to='/contact'>
             <li>
               <a href="#">Contact</a>
             </li>

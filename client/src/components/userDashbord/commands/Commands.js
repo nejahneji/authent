@@ -10,6 +10,7 @@ const Commands = (id) => {
   const dispatch = useDispatch()
   const {cartItems} = useSelector((state) => state.cart);
   return (
+    <div>
     <div className="cartscreen">
       <div className="cartscreen__left">
         <h2>Addition</h2>
@@ -42,12 +43,12 @@ const Commands = (id) => {
           <button>Purchase</button>
         </div>
       </div>
-      <Link to="/UserDashbord"><button>Home</button></Link>
+      
     </div>
 
+    <Link to="/UserDashbord"><i class="fas fa-pizza-slice fa-4x" id="aboutbtn">pizza</i></Link>
 
-
-  );
+ </div> );
 };
 
 export default Commands;
