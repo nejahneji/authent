@@ -16,7 +16,7 @@ const PizzaCard = ({pizza}) => {
             <Link to=''><img src={`http://localhost:5000/${pizza.avatar}`} alt={pizza.foodName} /></Link>
             </div>
             <div className="pizza-details">
-                <span>{pizza.foodName}</span>
+                <h3>{pizza.foodName}</h3>
                 <p>{pizza.description}</p>
                 <div className="buttons">
                     <span className="price">{pizza.price} Dt</span>

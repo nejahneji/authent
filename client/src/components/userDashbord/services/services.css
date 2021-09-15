@@ -1,0 +1,30 @@
+.services{
+    width: 60%;
+        height: 900px;
+        background:rgba(255,255,255,0.623);
+        position: relative;
+        margin: 6rem 18rem 5rem;
+        border-radius: 0 70px;
+        padding-top: 1px;
+        padding-right: 10px;
+}
+.services h1{
+    font-family: 'Indie Flower', cursive;
+}
+.services p{
+    margin-left: 10px;
+    width: 350px;
+}
+.services p h3{
+    font-family: 'Indie Flower', cursive;
+}
+.service1,
+.service2{
+display: flex;
+margin-top: 8rem;
+margin-left: 5rem;
+
+}
+
+
+

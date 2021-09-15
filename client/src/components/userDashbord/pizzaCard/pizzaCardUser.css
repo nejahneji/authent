@@ -34,13 +34,14 @@
     height: 230px;
     box-shadow: 0 10px 15px rgba(181, 181, 181, 0.7);
     background:rgba(255,255,255,0.623);
+    border-radius: 0 70px;
   }
   .pizza-img {
     width: 150px;
     height: 100px;
     
   }
-  .pizza-detail{
+  /* .pizza-detail{
   width: 300px;
   height: 230px;
   background: #21222d;
@@ -48,8 +49,14 @@
   padding: .8rem;
   font-family: 'poppins' , sans-serif;
   color :#fff ; 
+  } */
+  .pizza-details{
+    margin-top: 4rem;
   }
-  .pizza-detail p{
+  .pizza-details h3{
+    font-family: 'Indie Flower', cursive;
+  }
+  .pizza-details p{
       font-size: .8rem;
       color: #5f5f6b;
   }

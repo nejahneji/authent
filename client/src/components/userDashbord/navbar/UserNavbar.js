@@ -23,7 +23,7 @@ const UserNavbar = () => {
               <a href="#">About US</a>
             </li>
           </Link>
-          <Link>
+          <Link to='/services'>
             <li>
               <a href="#">Services</a>
             </li>
