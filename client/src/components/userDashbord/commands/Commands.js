@@ -1,14 +1,15 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import "./commandItem.css";
 
-import CommandItem from "./CommandItem";
+
 import "./commands.css";
 import { removeFromCart } from "../../../redux/actions/carAction";
 const Commands = (id) => {
   const dispatch = useDispatch()
   const {cartItems} = useSelector((state) => state.cart);
+  const [qty, setQty] = useState(0)
   return (
     <div>
     <div className="cartscreen">
@@ -22,11 +23,11 @@ const Commands = (id) => {
             <p>{pizza.foodName}</p>
           </Link>
           <p className="cartitem__price">{pizza.price}Dt</p>
-          <select className="cartitem__select">
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
+          <select className="cartitem__select" onChange={e => setQty(e.target.value)}>
+            <option value="1" value="1" >1</option>
+            <option value="2" value="2">2</option>
+            <option value="3" value="3">3</option>
+            <option value="4" value="4">4</option>
           </select>
           <i class="far fa-trash-alt fa-2x" onClick={()=> dispatch(removeFromCart(pizza.id))}></i>
         </div>))}
@@ -36,8 +37,8 @@ const Commands = (id) => {
 
       <div className="cartscreen__right">
         <div className="cartscreen__info">
-          <p>({cartItems.length})pizza</p>
-          <p style={{display:"flex", marginLeft:"7rem"}}><h6>Total = </h6>{cartItems.reduce((a,c) => a + parseInt(c.price) , 0 )}Dt</p>
+          <p>({cartItems.length * qty})pizza</p>
+          <p style={{display:"flex", marginLeft:"7rem"}}><h6>Total = </h6>{cartItems.reduce((a,c) => a + parseInt(c.price) * qty, 0 )}Dt</p>
         </div>
         <div>
           <button>Purchase</button>

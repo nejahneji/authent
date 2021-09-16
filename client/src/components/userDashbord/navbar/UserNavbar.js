@@ -3,17 +3,19 @@ import { Link } from "react-router-dom";
 import { logOut } from "../../../redux/actions/userActions";
 import "./userNavbar.css";
 
-const UserNavbar = () => {
+const UserNavbar = ({setSearch}) => {
   const cart = useSelector (state => state.cart);
   const dispatch = useDispatch()
   const {token} = useSelector(state => state.userReducer)
   const {cartItems} = cart
+  
   return (
     <header>
       <img
         src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQXgyKWQn7NprgQtWYqtKcjcRHxz3qxPcqrYQ&usqp=CAU"
         alt=""
       />
+      <input onChange={e =>{setSearch(e.target.value)}}/>
       <input type="checkBox" name="" className="but" />
       <div className="nav">
         <ol>

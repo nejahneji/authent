@@ -12,9 +12,9 @@ const Navbar = () => {
            <div className='nav'>
                <ol>
                    
-                   <li><a href="#">About US</a></li>
+                   {/* <li><a href="#">About US</a></li>
                    <li><a href="#">Services</a></li>
-                   <li><a href="#">Contact</a></li>
+                   <li><a href="#">Contact</a></li> */}
                    <Link to="/UserDashbord"><li><a href="#">User</a></li></Link>
                </ol>
            </div>
